@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fTy-j2-OLh"/>
+                        <viewControllerLayoutGuide type="bottom" id="KIP-RM-BhJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="10.15.115.91" borderStyle="roundedRect" placeholder="ip地址" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ADd-qK-yQW">
+                                <rect key="frame" x="82" y="76" width="209" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0m2-9i-EIv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nn-Uf-rI5">
+                                <rect key="frame" x="133" y="114" width="101" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="dzv-eQ-LVG"/>
+                                </constraints>
+                                <state key="normal" title="长连接">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="connect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="18U-fc-ZLA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBf-2s-z7G">
+                                <rect key="frame" x="133" y="213" width="101" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="101" id="voH-hC-0f9"/>
+                                </constraints>
+                                <state key="normal" title="发送">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="send:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iHK-ga-0Gj"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="server，你好，我是长链接" borderStyle="roundedRect" placeholder="长链接发送内容" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ARK-jx-yFL">
+                                <rect key="frame" x="23" y="175" width="328" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ZSB-6z-Vkn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2g-nv-hZj">
+                                <rect key="frame" x="106" y="320" width="153" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="rvi-eH-5Vr"/>
+                                </constraints>
+                                <state key="normal" title="发送短连接">
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="shortRequest:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7kl-ht-CTo"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="server，你好，我是短链接" borderStyle="roundedRect" placeholder="短链接发送内容" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zpZ-vE-uVE">
+                                <rect key="frame" x="23" y="282" width="328" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fLR-L0-JQl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ARK-jx-yFL" secondAttribute="trailing" constant="8" id="0DC-C6-2fm"/>
+                            <constraint firstItem="9nn-Uf-rI5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="117" id="3TE-WC-SVb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M2g-nv-hZj" secondAttribute="trailing" constant="100" id="7qc-Dn-twj"/>
+                            <constraint firstItem="zpZ-vE-uVE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="7" id="B2J-7C-1C8"/>
+                            <constraint firstItem="M2g-nv-hZj" firstAttribute="top" secondItem="zpZ-vE-uVE" secondAttribute="bottom" constant="8" id="BT2-td-BSH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fBf-2s-z7G" secondAttribute="trailing" constant="125" id="BeP-m9-Kdr"/>
+                            <constraint firstItem="zpZ-vE-uVE" firstAttribute="top" secondItem="fBf-2s-z7G" secondAttribute="bottom" constant="39" id="Hka-aV-ds3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="zpZ-vE-uVE" secondAttribute="trailing" constant="8" id="Hmt-ic-s0z"/>
+                            <constraint firstItem="M2g-nv-hZj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="90" id="J5S-0e-9el"/>
+                            <constraint firstItem="ADd-qK-yQW" firstAttribute="top" secondItem="fTy-j2-OLh" secondAttribute="bottom" constant="56" id="OmB-Bv-NaQ"/>
+                            <constraint firstItem="ADd-qK-yQW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="66" id="bIf-Kw-63P"/>
+                            <constraint firstItem="fBf-2s-z7G" firstAttribute="top" secondItem="ARK-jx-yFL" secondAttribute="bottom" constant="8" id="bcJ-ii-9pb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9nn-Uf-rI5" secondAttribute="trailing" constant="125" id="fbQ-YD-Dyd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ADd-qK-yQW" secondAttribute="trailing" constant="68" id="gwN-8j-Gxb"/>
+                            <constraint firstItem="ARK-jx-yFL" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="7" id="ieN-gi-Xeb"/>
+                            <constraint firstItem="ARK-jx-yFL" firstAttribute="top" secondItem="9nn-Uf-rI5" secondAttribute="bottom" constant="31" id="noe-dZ-oyr"/>
+                            <constraint firstItem="9nn-Uf-rI5" firstAttribute="top" secondItem="ADd-qK-yQW" secondAttribute="bottom" constant="8" id="tEP-io-PNI"/>
+                            <constraint firstItem="fBf-2s-z7G" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="117" id="yCt-cj-pOn"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="connectBtn" destination="9nn-Uf-rI5" id="ift-9l-664"/>
+                        <outlet property="ipTextField" destination="ADd-qK-yQW" id="48x-6r-jmO"/>
+                        <outlet property="longTextField" destination="ARK-jx-yFL" id="c9I-88-GBn"/>
+                        <outlet property="sendBtn" destination="fBf-2s-z7G" id="6EZ-fw-Yr4"/>
+                        <outlet property="sendShortBtn" destination="M2g-nv-hZj" id="Dmf-Yh-CH0"/>
+                        <outlet property="shortTextField" destination="zpZ-vE-uVE" id="V9B-mQ-o37"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
