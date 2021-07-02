@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -124,10 +124,10 @@
 		170633C021548BC300F2B1AC /* AsyncSocket */ = {
 			isa = PBXGroup;
 			children = (
-				170633C121548BC300F2B1AC /* AsyncUdpSocket.m */,
 				170633C221548BC300F2B1AC /* AsyncSocket.h */,
 				170633C321548BC300F2B1AC /* AsyncSocket.m */,
 				170633C421548BC300F2B1AC /* AsyncUdpSocket.h */,
+				170633C121548BC300F2B1AC /* AsyncUdpSocket.m */,
 			);
 			path = AsyncSocket;
 			sourceTree = "<group>";
@@ -135,10 +135,10 @@
 		170633C521548BC300F2B1AC /* GCDAsyncSocket */ = {
 			isa = PBXGroup;
 			children = (
-				170633C621548BC300F2B1AC /* GCDAsyncUdpSocket.m */,
+				170633C921548BC300F2B1AC /* GCDAsyncSocket.h */,
 				170633C721548BC300F2B1AC /* GCDAsyncSocket.m */,
 				170633C821548BC300F2B1AC /* GCDAsyncUdpSocket.h */,
-				170633C921548BC300F2B1AC /* GCDAsyncSocket.h */,
+				170633C621548BC300F2B1AC /* GCDAsyncUdpSocket.m */,
 			);
 			path = GCDAsyncSocket;
 			sourceTree = "<group>";
@@ -352,7 +352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -404,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -419,7 +419,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = L5WU564W59;
 				INFOPLIST_FILE = SocketClient/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -440,7 +440,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = L5WU564W59;
 				INFOPLIST_FILE = SocketClient/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

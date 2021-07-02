@@ -70,7 +70,9 @@
 }
 
 - (void)sendData:(NSData*)data {
-    [socketClient writeData:data withTimeout:-1 tag:0];
+    NSMutableData* mData = [NSMutableData dataWithData:data];
+    [mData appendData:[AsyncSocket CRLFData]];
+    [socketClient writeData:mData withTimeout:-1 tag:0];
 }
 static int timeCount = 0;
 - (void)timeCount:(NSTimer*)timer {
@@ -103,10 +105,7 @@ static int timeCount = 0;
     if (_success) {
         _success(data);
     }
-    
     [self invalidateTimer];
-    
-    
 }
 
 - (void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag {
@@ -118,11 +117,9 @@ static int timeCount = 0;
 }
 
 - (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port {
+    [sock readDataToData:[AsyncSocket CRLFData] withTimeout:-1 tag:0];
     
-    
-    [sock readDataWithTimeout:-1 tag:0];
-    
-     [self sendData:_bodyData];
+    [self sendData:_bodyData];
     
     NSLog(@"连接成功");
 }

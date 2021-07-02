@@ -147,7 +147,7 @@
 {
     [self setIPInformation];
     
-    [sock readDataWithTimeout:-1 tag:0];
+    [sock readDataToData:[AsyncSocket CRLFData] withTimeout:-1 tag:0];
 }
 
 - (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
@@ -157,7 +157,7 @@
         blockObject.block(data, sock);
     }
 
-    [sock readDataWithTimeout:-1 tag:0];
+    [sock readDataToData:[AsyncSocket CRLFData] withTimeout:-1 tag:0];
 }
 
 - (void)onSocket:(AsyncSocket *)sock didReadPartialDataOfLength:(NSUInteger)partialLength tag:(long)tag {

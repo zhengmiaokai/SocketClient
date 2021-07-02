@@ -42,7 +42,11 @@
         if ([[data subdataWithRange:NSMakeRange(0, 2)] isEqualToData:[NSData dataWithBytes:bytes length:2]]) {
             weakSelf.shortLab.stringValue = [[NSString alloc] initWithData:[data subdataWithRange:NSMakeRange(2, data.length - 2)] encoding:NSUTF8StringEncoding];
             
-            [socket writeData:[_contentTextField.stringValue dataUsingEncoding:NSUTF8StringEncoding] withTimeout:-1 tag:0];
+            NSMutableData* mData = [NSMutableData dataWithData:[_contentTextField.stringValue dataUsingEncoding:NSUTF8StringEncoding]];
+            
+            [mData appendData:[AsyncSocket CRLFData]];
+            
+            [socket writeData:mData withTimeout:-1 tag:0];
         }
         else{
             weakSelf.longLab.stringValue = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -122,18 +126,23 @@ static int tag = 1;
 
 - (IBAction)target:(id)sender
 {
+    NSData* data = nil;
     if (tag == 1) {
-        [[ServerSocket sharedManager] sendMessageToAll:[self getData1]];
+        data = [self getData1];
         tag = 2;
     }
     else if (tag == 2) {
-        [[ServerSocket sharedManager] sendMessageToAll:[self getData2]];
+        data = [self getData2];
         tag = 3;
     }
     else if (tag == 3) {
-        [[ServerSocket sharedManager] sendMessageToAll:[self getData3]];
+        data = [self getData3];
         tag = 1;
     }
+    
+    NSMutableData* mData = [[NSMutableData alloc] initWithData:data];
+    [mData appendData:[AsyncSocket CRLFData]];
+    [[ServerSocket sharedManager] sendMessageToAll:mData];
 }
 
 

@@ -80,7 +80,9 @@
 }
 
 - (void)sendData:(NSData*)data {
-    [socketClient writeData:data withTimeout:-1 tag:0];
+    NSMutableData* mData = [NSMutableData dataWithData:data];
+    [mData appendData:[AsyncSocket CRLFData]];
+    [socketClient writeData:mData withTimeout:-1 tag:0];
 }
 
 - (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
@@ -121,7 +123,7 @@
         blockObject.block(error?NO:YES, result);
     }
     
-    [sock readDataWithTimeout:-1 tag:0];
+    [sock readDataToData:[AsyncSocket CRLFData] withTimeout:-1 tag:0];
 }
 
 - (void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag {
@@ -136,7 +138,7 @@
 
 - (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port {
     
-    [sock readDataWithTimeout:-1 tag:0];
+    [sock readDataToData:[AsyncSocket CRLFData] withTimeout:-1 tag:0];
     
     self.isConnected = YES;
     
