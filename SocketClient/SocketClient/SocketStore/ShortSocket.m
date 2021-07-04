@@ -119,7 +119,10 @@ static int timeCount = 0;
 - (void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port {
     [sock readDataToData:[AsyncSocket CRLFData] withTimeout:-1 tag:0];
     
-    [self sendData:_bodyData];
+    NSMutableData* mData = [[NSMutableData alloc] initWithData:_bodyData];
+    [mData appendData:[AsyncSocket CRLFData]];
+    
+    [self sendData:mData];
     
     NSLog(@"连接成功");
 }

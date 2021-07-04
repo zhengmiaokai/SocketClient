@@ -87,11 +87,13 @@
 
 - (void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
     
+    NSData* contentData = [data subdataWithRange:NSMakeRange(0, data.length - 2)];
+    
     DataAnalysis* analysiser = [[DataAnalysis alloc] init];
     
     NSError* error =  nil;
     
-    [analysiser analysisData:data error:&error];
+    [analysiser analysisData:contentData error:&error];
     
     BOOL isSuccess = error?NO:YES;
     

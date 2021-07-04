@@ -12,21 +12,10 @@
 		95D6289C1AF6290200EA6507 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D6289B1AF6290200EA6507 /* ViewController.m */; };
 		95D6289E1AF6290200EA6507 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95D6289D1AF6290200EA6507 /* Images.xcassets */; };
 		95D628A11AF6290200EA6507 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95D6289F1AF6290200EA6507 /* Main.storyboard */; };
-		95D628AD1AF6290200EA6507 /* SocketServerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D628AC1AF6290200EA6507 /* SocketServerTests.m */; };
 		95D628B81AF6293900EA6507 /* ServerSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D628B71AF6293900EA6507 /* ServerSocket.m */; };
 		95D628BE1AF6294900EA6507 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D628BB1AF6294900EA6507 /* AsyncSocket.m */; };
 		95D628BF1AF6294900EA6507 /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 95D628BD1AF6294900EA6507 /* AsyncUdpSocket.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		95D628A71AF6290200EA6507 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 95D628881AF6290200EA6507 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 95D6288F1AF6290200EA6507;
-			remoteInfo = SocketServer;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		95D628901AF6290200EA6507 /* SocketServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocketServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,7 +27,6 @@
 		95D6289B1AF6290200EA6507 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		95D6289D1AF6290200EA6507 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		95D628A01AF6290200EA6507 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		95D628A61AF6290200EA6507 /* SocketServerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SocketServerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		95D628AB1AF6290200EA6507 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95D628AC1AF6290200EA6507 /* SocketServerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketServerTests.m; sourceTree = "<group>"; };
 		95D628B61AF6293900EA6507 /* ServerSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerSocket.h; sourceTree = "<group>"; };
@@ -51,13 +39,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		95D6288D1AF6290200EA6507 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95D628A31AF6290200EA6507 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -80,7 +61,6 @@
 			isa = PBXGroup;
 			children = (
 				95D628901AF6290200EA6507 /* SocketServer.app */,
-				95D628A61AF6290200EA6507 /* SocketServerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,24 +139,6 @@
 			productReference = 95D628901AF6290200EA6507 /* SocketServer.app */;
 			productType = "com.apple.product-type.application";
 		};
-		95D628A51AF6290200EA6507 /* SocketServerTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 95D628B31AF6290200EA6507 /* Build configuration list for PBXNativeTarget "SocketServerTests" */;
-			buildPhases = (
-				95D628A21AF6290200EA6507 /* Sources */,
-				95D628A31AF6290200EA6507 /* Frameworks */,
-				95D628A41AF6290200EA6507 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				95D628A81AF6290200EA6507 /* PBXTargetDependency */,
-			);
-			name = SocketServerTests;
-			productName = SocketServerTests;
-			productReference = 95D628A61AF6290200EA6507 /* SocketServerTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -189,10 +151,6 @@
 					95D6288F1AF6290200EA6507 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
-					95D628A51AF6290200EA6507 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = 95D6288F1AF6290200EA6507;
-					};
 				};
 			};
 			buildConfigurationList = 95D6288B1AF6290200EA6507 /* Build configuration list for PBXProject "SocketServer" */;
@@ -200,6 +158,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -209,7 +168,6 @@
 			projectRoot = "";
 			targets = (
 				95D6288F1AF6290200EA6507 /* SocketServer */,
-				95D628A51AF6290200EA6507 /* SocketServerTests */,
 			);
 		};
 /* End PBXProject section */
@@ -221,13 +179,6 @@
 			files = (
 				95D6289E1AF6290200EA6507 /* Images.xcassets in Resources */,
 				95D628A11AF6290200EA6507 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		95D628A41AF6290200EA6507 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,23 +198,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		95D628A21AF6290200EA6507 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				95D628AD1AF6290200EA6507 /* SocketServerTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		95D628A81AF6290200EA6507 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 95D6288F1AF6290200EA6507 /* SocketServer */;
-			targetProxy = 95D628A71AF6290200EA6507 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		95D6289F1AF6290200EA6507 /* Main.storyboard */ = {
@@ -375,42 +310,6 @@
 			};
 			name = Release;
 		};
-		95D628B41AF6290200EA6507 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SocketServerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocketServer.app/Contents/MacOS/SocketServer";
-			};
-			name = Debug;
-		};
-		95D628B51AF6290200EA6507 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = SocketServerTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SocketServer.app/Contents/MacOS/SocketServer";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -430,14 +329,7 @@
 				95D628B21AF6290200EA6507 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-		};
-		95D628B31AF6290200EA6507 /* Build configuration list for PBXNativeTarget "SocketServerTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				95D628B41AF6290200EA6507 /* Debug */,
-				95D628B51AF6290200EA6507 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
