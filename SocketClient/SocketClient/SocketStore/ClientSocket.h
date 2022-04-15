@@ -21,10 +21,6 @@ typedef  void(^SocketBlock)(BOOL isSuccess, id data);
 @end
 
 @interface ClientSocket : NSObject<AsyncSocketDelegate>
-{
-    AsyncSocket* socketClient;
-    NSMutableArray* blocks;
-}
 
 @property (nonatomic) BOOL isConnected;
 
