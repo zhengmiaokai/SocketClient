@@ -8,7 +8,14 @@
 
 #import "ShortSocket.h"
 
-
+@interface ShortSocket () {
+    AsyncSocket* socketClient;
+    
+    NSTimer* _timer;
+    NSString* _ipStr;
+    unsigned int _port;
+}
+@end
 
 @implementation ShortSocket
 
@@ -16,9 +23,7 @@
 {
     self = [super init];
     if (self) {
-        
         socketClient = [[AsyncSocket alloc] initWithDelegate:self];
-
     }
     return self;
 }
@@ -26,7 +31,6 @@
 - (void)dealloc {
     
 }
-
 
 - (instancetype)initWithConnectIp:(NSString*)ipStr port:(unsigned int)port {
     self = [self init];
