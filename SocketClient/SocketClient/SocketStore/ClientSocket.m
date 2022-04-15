@@ -8,12 +8,17 @@
 
 #import "ClientSocket.h"
 #import "DataAnalysis.h"
-#import "URLEncodeItem.h"
-#import "HexadecimalItem.h"
-#import "JsonDataItem.h"
+#import "BodyEncode.h"
 
 @implementation BlockObject
 
+@end
+
+@interface ClientSocket () {
+    AsyncSocket* socketClient;
+    NSMutableArray* blocks;
+    NSDictionary* decoders;
+}
 @end
 
 @implementation ClientSocket
@@ -21,10 +26,11 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        
+        decoders = @{[NSString stringWithFormat:@"%hhu", (Byte)(BodyEncodeTypeUTF8&0xff)] : @"URLEncodeItem",
+                     [NSString stringWithFormat:@"%hhu", (Byte)(BodyEncodeTypeJson&0xff)] : @"JsonDataItem",
+                     [NSString stringWithFormat:@"%hhu", (Byte)(BodyEncodeTypeHex&0xff)] : @"HexadecimalItem" };
         socketClient = [[AsyncSocket alloc] initWithDelegate:self];
         blocks = [NSMutableArray array];
-        
     }
     return self;
 }
@@ -95,28 +101,19 @@
     
     [analysiser analysisData:contentData error:&error];
     
-    BOOL isSuccess = error?NO:YES;
+    BOOL isSuccess = (error ? NO : YES);
     
     id result = nil;
     
     if (isSuccess) {
-        BodyEncode <BodyEncode> * bodyEncode = nil;
+        NSString* decoderClassName = [decoders objectForKey:[NSString stringWithFormat:@"%hhu", analysiser.frameFormat.type]];
         
-        if (analysiser.frameFormat.type == (BodyEncodeTypeUTF8&0xff)) {
-            bodyEncode = [[URLEncodeItem alloc] init];
-        }
-        else if (analysiser.frameFormat.type == (BodyEncodeTypeJson&0xff)) {
-            bodyEncode = [[JsonDataItem alloc] init];
-        }
-        else if (analysiser.frameFormat.type == (BodyEncodeTypeHex&0xff)) {
-            bodyEncode = [[HexadecimalItem alloc] init];
-        }
+        BodyEncode *bodyEncode = (BodyEncode *)[[NSClassFromString(decoderClassName) alloc] init];
         
         [bodyEncode analysisFrameFormat:analysiser.frameFormat];
         
         result = bodyEncode;
-    }
-    else {
+    } else {
         result = error;
     }
     
