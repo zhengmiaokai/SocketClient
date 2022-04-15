@@ -10,14 +10,6 @@
 #import "AsyncSocket.h"
 
 @interface ShortSocket : NSObject<AsyncSocketDelegate>
-{
-    AsyncSocket* socketClient;
-    NSTimer* _timer;
-    
-    @private
-    NSString* _ipStr;
-    unsigned int _port;
-}
 
 @property (nonatomic, strong) NSData* bodyData;
 
